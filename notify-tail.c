@@ -236,6 +236,9 @@ reinit_file(struct file_watch *watch)
 		watch->file_offset = lseek(watch->fd, 0, SEEK_END);
 	} else {
 		fprintf(stderr, "Failed to add watch for '%s': %s\n", watch->name, strerror(errno));
+		close(watch->fd);
+		watch->fd = -1;
+		watch->watch_desc = -1;
 	}
 }
 
