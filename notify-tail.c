@@ -233,7 +233,7 @@ reinit_file(struct file_watch *watch)
 	
 	watch->watch_desc = inotify_add_watch(inotify_fd, watch->name, IN_MODIFY | IN_MOVE_SELF | IN_DELETE_SELF);
 	if (watch->watch_desc >= 0) {
-		watch->file_offset = lseek(watch->fd, 0, SEEK_CUR);
+		watch->file_offset = lseek(watch->fd, 0, SEEK_END);
 	} else {
 		fprintf(stderr, "Failed to add watch for '%s': %s\n", watch->name, strerror(errno));
 	}
