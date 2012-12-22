@@ -1,3 +1,10 @@
+/* (c) 2011 Uli Schlachter
+ *
+ * This code is covered by the following license:
+ *
+ * 0. You just DO WHAT THE FUCK YOU WANT TO.
+ */
+
 #include <errno.h>
 #include <fcntl.h>
 #include <libnotify/notify.h>
