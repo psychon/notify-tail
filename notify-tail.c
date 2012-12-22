@@ -14,6 +14,11 @@
 #define LINE_BUFFER_SIZE 4096
 #define TIMEOUT 10000
 
+/* FIXME: Would have been easier to just write something which reads lines from
+ * stdin and sends them via notify. Waaay less code since tail could handle
+ * stuff.
+ */
+
 struct file_watch {
 	struct file_watch *next;
 	int watch_desc;
